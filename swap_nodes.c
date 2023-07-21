@@ -57,7 +57,7 @@ void swap_nodes(const listint_t *list, listint_t *node_1, listint_t *node_2) {
         printf("temp->prev = %d temp = %d temp->next = %d\n", temp->prev->n, temp->n, temp->next->n);
         printf("forward->prev = %d forward = %d forward->next = %d\n", forward->prev->n, forward->n, forward->next->n);
         
-        printf("\n---Operation---\nforward->next->prev = temp\n\n");
+        printf("\n---Operation---\forward->next->prev = temp\n\n");
         printf("--before--\n");
         printf("backward = %d backward->next = %d\n", backward->n, backward->next->n);
         printf("temp->prev = %d temp = %d temp->next = %d\n", temp->prev->n, temp->n, temp->next->n);
@@ -217,6 +217,17 @@ void swap_nodes(const listint_t *list, listint_t *node_1, listint_t *node_2) {
     }
     else if (!node_1->prev && node_2->next) {
         printf("This is case 3 (node_1 is head)\n");
+
+        printf("\n--Operation---\ntemp->next = forward->next\n\n");
+        printf("--before--\n");
+        printf("temp = %d temp->next = %d\n", temp->n, temp->next->n);
+        printf("forward->prev = %d forward = %d forward->next = %d\n", forward->prev->n, forward->n, forward->next->n);
+        print_list(list);
+        temp->next = forward->next;
+        printf("--after--\n");
+        printf("temp = %d temp->next = %d\n", temp->n, temp->next->n);
+        printf("forward->prev = %d forward = %d forward->next = %d\n", forward->prev->n, forward->n, forward->next->n);
+        print_list(list);
         
         printf("\n--Operation---\nforward->next->prev = temp\n\n");
         printf("--before--\n");
@@ -237,17 +248,6 @@ void swap_nodes(const listint_t *list, listint_t *node_1, listint_t *node_2) {
         temp->prev = forward;
         printf("--after--\n");
         printf("temp->prev = %d temp = %d temp->next = %d\n", temp->prev->n, temp->n, temp->next->n);
-        printf("forward->prev = %d forward = %d forward->next = %d\n", forward->prev->n, forward->n, forward->next->n);
-        print_list(list);
-
-        printf("\n--Operation---\ntemp->next = forward->next\n\n");
-        printf("--before--\n");
-        printf("temp = %d temp->next = %d\n", temp->n, temp->next->n);
-        printf("forward->prev = %d forward = %d forward->next = %d\n", forward->prev->n, forward->n, forward->next->n);
-        print_list(list);
-        temp->next = forward->next;
-        printf("--after--\n");
-        printf("temp = %d temp->next = %d\n", temp->n, temp->next->n);
         printf("forward->prev = %d forward = %d forward->next = %d\n", forward->prev->n, forward->n, forward->next->n);
         print_list(list);
 
