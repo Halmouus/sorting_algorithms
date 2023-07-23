@@ -9,12 +9,12 @@
  */
 int main(void)
 {
-    int array[] = {12, 19, 0,22, 24, 77, 78, 79, 80, 99, 0};
+    int array[] = {8, 2, 4, 7, 1, 3, 9, 6, 5};
     size_t n = sizeof(array) / sizeof(array[0]);
 
     print_array(array, n);
     printf("****************\n");
-    selection_sort(array, n);
+    quick_sort(array, n);
     printf("****************\n");
     print_array(array, n);
     return (0);
