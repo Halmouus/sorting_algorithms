@@ -17,11 +17,11 @@ int main(void)
     print_list(list);
     printf("list = %d, list->next = %d\n", list->n, list->next->n);
     printf("list = %d, list->next->prev = %d\n", list->n, list->next->prev->n);
-    swap_nodes(list, list, list->next);
+    swap_nodes(&list, &list, list->next);
     print_list(list);
     printf("list = %d, list->next = %d\n", list->n, list->next->n);
-    printf("list = %d, list->next->prev = %d\n", list->n, list->next->prev->n);
-    swap_nodes(list, list->next->next, list->next->next->next);
+    //printf("list = %d, list->next->prev = %d\n", list->n, list->next->prev->n);
+    swap_nodes(&list, &list->next->next, list->next->next->next);
     //swap_nodes(list->next, list->next->next);
     print_list(list);
     //swap_nodes(list->next->next, list->next->next->next);

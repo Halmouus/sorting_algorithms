@@ -5,6 +5,39 @@
  * @list: doubly-linked list of integers to sort
  */
 
+
+void insertion_sort_list(listint_t **list) {
+    
+    listint_t *temp = NULL, *forward = NULL, *backward = NULL;
+    int swap_n;
+    if (!list)
+        return;
+    temp = *list;
+    while (temp && temp->next)
+    {
+        swap_n = 0;
+        forward = temp->next;
+        while (temp->n > forward->n && temp->next) {
+                swap_nodes(&list, &temp, forward);
+                swap_n++;
+                while (forward->prev && )
+                    backward = forward->prev;
+                    while (forward->n > backward->n) {
+                        swap_nodes(&list, &forward, backward);
+                        swap_n++;
+                        if for
+                    }
+                forward = temp->next;
+        }
+        if (swap_n == 0)
+            break;
+        if (temp->next)
+            temp = temp->next;
+    }
+    
+}
+
+/*
 void insertion_sort_list(listint_t **list) {
     listint_t *temp = NULL, *forward = NULL, *backward = NULL, *swap;
     temp = *list;
@@ -31,3 +64,4 @@ void insertion_sort_list(listint_t **list) {
     }
     
 }
+*/

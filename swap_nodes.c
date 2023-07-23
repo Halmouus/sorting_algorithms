@@ -33,7 +33,21 @@ listint_t *create_listint(const int *array, size_t size)
     return (list);
 }
 
-void swap_nodes(const listint_t *list, listint_t *node_1, listint_t *node_2) {
+void swap_nodes(listint_t **list, listint_t **node_1, listint_t *node_2) {
+    	(*node_1)->next = node_2->next;
+        if (node_2->next != NULL)
+            node_2->next->prev = *node_1;
+        node_2->prev = (*node_1)->prev;
+        node_2->next = *node_1;
+        if ((*node_1)->prev != NULL)
+            (*node_1)->prev->next = node_2;
+        else
+            *list = node_2;
+        (*node_1)->prev = node_2;
+        *node_1 = node_2->prev;
+}
+
+void sswap_nodes(const listint_t *list, listint_t *node_1, listint_t *node_2) {
     listint_t *temp = NULL, *forward = NULL, *backward = NULL;
     if (!node_1 || !node_2 || node_1 == node_2) {
         printf("Nodes are null!\n");
