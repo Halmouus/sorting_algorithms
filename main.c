@@ -9,21 +9,13 @@
  */
 int main(void)
 {
-    int array[] = {1, 2, 3, 4, 5, 6};
-    listint_t *list;
+    int array[] = {12, 19, 0,22, 24, 77, 78, 79, 80, 99, 0};
     size_t n = sizeof(array) / sizeof(array[0]);
-    list = create_listint(array, n);
-    //print_array(array, n);
-    print_list(list);
-    printf("list = %d, list->next = %d\n", list->n, list->next->n);
-    printf("list = %d, list->next->prev = %d\n", list->n, list->next->prev->n);
-    swap_nodes(&list, &list, list->next);
-    print_list(list);
-    printf("list = %d, list->next = %d\n", list->n, list->next->n);
-    //printf("list = %d, list->next->prev = %d\n", list->n, list->next->prev->n);
-    swap_nodes(&list, &list->next->next, list->next->next->next);
-    //swap_nodes(list->next, list->next->next);
-    print_list(list);
-    //swap_nodes(list->next->next, list->next->next->next);
-    print_list(list);
+
+    print_array(array, n);
+    printf("****************\n");
+    selection_sort(array, n);
+    printf("****************\n");
+    print_array(array, n);
+    return (0);
 }
