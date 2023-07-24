@@ -9,29 +9,38 @@
 void insertion_sort_list(listint_t **list) {
     
     listint_t *temp = NULL, *forward = NULL, *backward = NULL;
-    int swap_n;
-    if (!list)
+    int swaps;
+    if (!list || !(*list) || !(*list)->next)
         return;
     temp = *list;
+    forward = (*list)->next;
     while (temp && temp->next)
     {
-        swap_n = 0;
+        swaps = 0;
         forward = temp->next;
-        while (temp->n > forward->n && temp->next) {
-                swap_nodes(&list, &temp, forward);
-                swap_n++;
-                while (forward->prev && )
-                    backward = forward->prev;
-                    while (forward->n > backward->n) {
-                        swap_nodes(&list, &forward, backward);
-                        swap_n++;
-                        if for
-                    }
-                forward = temp->next;
+        if (temp->n > forward->n)
+        {
+            swap_nodes(list, &temp, forward);
+            //print_list(*list);
+            printf("This is an infinite loop! (1)\n");
+            swaps++;
+            while (forward->prev)
+            {
+                backward = forward->prev;
+                if (backward->n > forward->n)
+                {
+                    printf("Before: forward->n = %d backward->n = %d\n", forward->n, backward->n);
+                    swap_nodes(list, &forward, backward);
+                    //print_list(*list);
+                    printf("This is an infinite loop! (2)\n");
+                    printf("After: forward->n = %d backward->n = %d\n", forward->n, backward->n);
+                    swaps++;
+                } else {
+                    break;
+                }
+            }
         }
-        if (swap_n == 0)
-            break;
-        if (temp->next)
+        if (swaps == 0)
             temp = temp->next;
     }
     
