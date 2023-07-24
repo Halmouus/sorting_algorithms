@@ -88,10 +88,14 @@ void quick_sort_wraper(int *array, size_t size, int start_idx, int end_idx) {
             j++;
         }
     }
-    if (i < n && n > 0 && i > 1) {
-        printf("entering recusrion bloc\n");
+    printf("_____checking if:\n %d < %d && %d > 0 && %d > 1\n", i, n, n, i);
+    if (n > 0 && i > 1) {
+        printf("entering recusrion bloc of n = %d\n", n);
+        printf("*****************Fisrt part******************\n");
+        printf("from %d to %d\n", i + 1, end_idx);
         quick_sort_wraper(array, size, i + 1, end_idx);
         printf("*****************Second Part******************\n");
+        printf("from %d to %d\n", 0, i - 1);
         quick_sort_wraper(array, size, 0, i - 1);
     }
 }
