@@ -21,6 +21,8 @@ c = *a;
 
 void quick_sort(int *array, size_t size)
 {
+if (!array || size < 2)
+return;
 quick_sort_wraper(array, size, 0, (int)(size - 1));
 }
 
