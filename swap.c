@@ -21,21 +21,21 @@ c = *a;
  * return: index of min value of the array
 */
 int min_arr(int *array, int start, size_t n) {
-    int min;
-    int i = start, min_index;
-    if (!array || n == 0) {
-        printf("Shit happened bro\n!");
-        return -1;
-    }
-    min_index = start;
-    min = array[start];
-    while (i < (int)n)
-    {
-        if (array[i] < min) {
-            min = array[i];
-            min_index = i;
-        }
-        i++;
-    }
-    return min_index;    
+int min;
+int i = start, min_index;
+if (!array || n == 0) {
+printf("Shit happened bro\n!");
+return -1;
+}
+min_index = start;
+min = array[start];
+while (i < (int)n)
+{
+if (array[i] < min) {
+min = array[i];
+min_index = i;
+}
+i++;
+}
+return min_index;
 }
