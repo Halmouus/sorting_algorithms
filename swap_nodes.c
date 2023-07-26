@@ -33,7 +33,7 @@ listint_t *create_listint(const int *array, size_t size)
     return (list);
 }
 
-void swap_nodes(listint_t **list, listint_t **node_1, listint_t *node_2) {
+void swap_list(listint_t **list, listint_t **node_1, listint_t *node_2) {
     	(*node_1)->next = node_2->next;
         if (node_2->next != NULL)
             node_2->next->prev = *node_1;

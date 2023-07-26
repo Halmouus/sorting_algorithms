@@ -25,7 +25,7 @@ void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void swap_int(int *a, int *b);
 int min_arr(int *array, int start, size_t n);
-void swap_nodes(listint_t **list, listint_t **node_1, listint_t *node_2);
+void swap_list(listint_t **list, listint_t **node_1, listint_t *node_2);
 void sswap_nodes(const listint_t *list, listint_t *node_1, listint_t *node_2);
 listint_t *create_listint(const int *array, size_t size);
 void bubble_sort(int *array, size_t size);
