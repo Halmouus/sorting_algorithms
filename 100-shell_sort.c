@@ -18,12 +18,13 @@ c = *a;
  * @size: size of a given array
  * Return: the gap
 */
-int get_gap(size_t size) {
-    int h = 1, n = (int)size;
-    while (h < n)
-        h = 3 * h + 1;
-    h = (h - 1) / 3;
-    return h;
+int get_gap(size_t size)
+{
+int h = 1, n = (int)size;
+while (h < n)
+h = 3 * h + 1;
+h = (h - 1) / 3;
+return (h);
 }
 
 /**
@@ -32,24 +33,30 @@ int get_gap(size_t size) {
  * @size: size of the array.
  */
 
-void shell_sort(int *array, size_t size) {
-    int gap = get_gap(size), n = (int)size;
-    int i = 0, j, temp, end;
-    for (int i = 0; i < n; i++)
-    {
-        continue;
-    }
-    while (i + gap < n)
-    {
-        j = (n - 1) / (gap + i);
-        if (array[i] > array[gap]){
-            swap_int(&array[i], &array[gap]);
-            /*incomplete program*/
-
-
-        }
-        i++;
-    }
-    
-    
+void shell_sort(int *array, size_t size)
+{
+int gap, n, idx, temp;
+if (!array || size < 2)
+return;
+gap = get_gap(size);
+n = (int)size;
+while (gap > 0)
+{
+idx = gap;
+while (idx < n)
+{
+temp = idx;
+while (temp >= gap)
+{
+if (array[temp] < array[temp - gap])
+{
+swap_int(&array[temp], &array[temp - gap]);
+}
+temp -= gap;
+}
+idx++;
+}
+gap = (gap - 1) / 3;
+print_array(array, size);
+}
 }
